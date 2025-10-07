@@ -2,6 +2,10 @@
 
 A lightweight, customizable arc (circular) progress bar widget for [Dear ImGui](https://github.com/ocornut/imgui). This project provides an easy-to-use extension for rendering arc-shaped progress bars in your ImGui-based applications.
 
+Here's how it looks like (see "**Build the Example Application**" below):
+
+![Screenshot for example](screenshot.png)
+
 ## Features
 - Draw arc/circular progress bars at any position or at the current ImGui cursor.
 - Configurable arc angle, percentage, thickness, and color.
