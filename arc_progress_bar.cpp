@@ -40,7 +40,11 @@ void _DrawArc(float size, float max_angle_factor, float percentage, float thickn
     float a_factor_delta = (a_max_factor_100percentage - a_min_factor) * (percentage * 0.01f);
     a_max_factor = a_min_factor + a_factor_delta;
 
-    // Path
+    // Path for background arc (dimmed arc)
+    draw_list->PathArcTo(ImVec2(x + size * 0.5f, y + size * 0.5f), size * 0.5f, 3.141592f * a_min_factor, 3.141592f * a_max_factor_100percentage);
+    draw_list->PathStroke(_GetStyleColor(ImGuiCol_Button), ImDrawFlags_None, thickness);
+
+    // Path for progress filling (highlighted arc)
     draw_list->PathArcTo(ImVec2(x + size * 0.5f, y + size * 0.5f), size * 0.5f, 3.141592f * a_min_factor, 3.141592f * a_max_factor);
     draw_list->PathStroke(_GetStyleColor(ImGuiCol_ButtonActive), ImDrawFlags_None, thickness);
 }
