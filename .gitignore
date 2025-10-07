@@ -1,0 +1,65 @@
+# Clangd cache
+.cache/
+
+# Dear ImGui config file (useless to track)
+imgui.ini
+
+# Compiled object files
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+*.elf
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# CMake build directories
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/Makefile
+/install_manifest.txt
+
+# Qt Creator
+*.pro.user
+*.qmake.stash
+
+# Code::Blocks
+*.depend
+*.layout
+
+# Visual Studio Code
+.vscode/
+
+# CLion
+.idea/
+
+# Other
+*.log
+*.swp
+*~
+
+# Ignore generated documentation
+/docs/html/
+/docs/latex/
