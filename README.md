@@ -24,6 +24,8 @@ Here's how it looks like (see "**Build the Example Application**" below):
   #include "arc_progress_bar.hpp"
   ```
 
+- Make sure your project builds `arc_progress_bar.cpp` altogether.
+
 ### 2. API Reference
 
 ```cpp
@@ -42,6 +44,7 @@ namespace ImGuiExt {
 - `pos`: Position of the widget (top-left corner, in screen coordinates)
 - `thickness`: Arc line thickness (default: 2.0f)
 
+
 ### 3. Example Usage
 
 ```cpp
@@ -50,6 +53,34 @@ ImGuiExt::ProgressBarArc(100, 1.0f, 0.75f, ImVec2(200, 200), 4.0f);
 
 // Draw at current ImGui cursor position
 ImGuiExt::ProgressBarArc(80, 0.8f, 0.5f, 3.0f);
+```
+
+---
+
+### 4. Customizing Progress Bar Color
+
+The arc progress bar uses ImGui's style colors for its appearance:
+- The background arc uses `ImGuiCol_Button`.
+- The progress (foreground) arc uses `ImGuiCol_ButtonActive`.
+
+You can customize the color by pushing a new style color before drawing the widget:
+
+```cpp
+// Set a custom color for the progress arc
+ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(1.0f, 0.5f, 0.2f, 1.0f));
+ImGuiExt::ProgressBarArc(120, 1.0f, 0.6f, ImVec2(100, 100), 5.0f);
+ImGui::PopStyleColor();
+
+// Set a custom color for the background arc
+ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.3f, 0.3f, 0.3f, 0.5f));
+ImGuiExt::ProgressBarArc(120, 1.0f, 0.6f, ImVec2(100, 100), 5.0f);
+ImGui::PopStyleColor();
+
+// You can push both colors at once:
+ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.2f, 0.2f, 0.2f, 0.5f));
+ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.9f, 0.7f, 0.1f, 1.0f));
+ImGuiExt::ProgressBarArc(120, 1.0f, 0.6f, ImVec2(100, 100), 5.0f);
+ImGui::PopStyleColor(2);
 ```
 
 ---
